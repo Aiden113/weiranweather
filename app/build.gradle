@@ -25,10 +25,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:26.+'
-    testCompile 'junit:junit:4.12'
     compile 'org.litepal.android:core:+'
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
-    compile 'com.google.code.gson:gson:+'
+    compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.github.bumptech.glide:glide:+'
     compile 'com.idescout.sql:sqlscout-server:2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
 }

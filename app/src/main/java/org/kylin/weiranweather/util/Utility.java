@@ -3,12 +3,15 @@ package org.kylin.weiranweather.util;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.kylin.weiranweather.db.City;
 import org.kylin.weiranweather.db.County;
 import org.kylin.weiranweather.db.Province;
+import org.kylin.weiranweather.gson.Weather;
 
 /**
  * Created by hello on 2017/10/22.
@@ -84,5 +87,19 @@ public class Utility {
         }
         return false;
     }
+    /**
+     * 将返回的JSON数据解析成 Weather 实体类
+     */
 
+    public static Weather handleWeatherResponse( String response){
+        try {
+            JSONObject jsonObject =new JSONObject(response);
+            JSONArray jsonArray =jsonObject.getJSONArray("HeWeather");
+            String weatherContent =jsonArray.getJSONObject(0).toString();
+            return  new Gson().fromJson(weatherContent,Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
