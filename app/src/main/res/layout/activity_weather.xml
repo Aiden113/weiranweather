@@ -11,6 +11,20 @@
         android:id="@+id/bg_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:id="@+id/drawer_layout"
+        android:layout_height="match_parent">
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/swipe_refresh"
+        android:layout_height="match_parent">
+
+
+
 <ScrollView
     android:id="@+id/weather_layout"
     android:scrollbars="none"
@@ -32,4 +46,13 @@
 
 
 </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+<fragment
+    android:id="@+id/choose_area_fragment"
+    android:name="org.kylin.weiranweather.ChooseAreaFragment"
+    android:layout_width="match_parent"
+    android:layout_gravity="start"
+    android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.DrawerLayout>
 </FrameLayout>
