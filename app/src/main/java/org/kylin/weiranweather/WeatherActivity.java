@@ -1,5 +1,6 @@
 package org.kylin.weiranweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -23,6 +24,7 @@ import com.bumptech.glide.Glide;
 
 import org.kylin.weiranweather.gson.Forecast;
 import org.kylin.weiranweather.gson.Weather;
+import org.kylin.weiranweather.service.AutoUpdateService;
 import org.kylin.weiranweather.util.HttpUtil;
 import org.kylin.weiranweather.util.Utility;
 
@@ -223,6 +225,7 @@ private ImageView bgImg;
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-
+        Intent intent =new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
